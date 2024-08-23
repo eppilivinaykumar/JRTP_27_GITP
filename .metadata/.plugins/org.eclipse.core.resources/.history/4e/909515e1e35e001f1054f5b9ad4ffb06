@@ -1,0 +1,26 @@
+package in.ashokit.service;
+
+import org.springframework.stereotype.Service;
+
+import in.ashokit.dto.DashboardResponse;
+import in.ashokit.entities.Counsellor;
+
+@Service
+public class CounsellorServiceImpl  implements CounsellorService{
+	@Override
+    public boolean register(Counsellor counsellor) {
+        // Implementation goes here
+        return false;
+    }
+
+    @Override
+    public Counsellor login(String email, String pwd) {
+        // Implementation goes here
+        return null;
+    }
+
+    @Override
+    public DashboardResponse getDashboardInfo(Integer counsellorId) {
+        // Implementation goes here
+        return null;
+}

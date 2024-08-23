@@ -1,0 +1,9 @@
+package in.ashokit.service;
+
+import org.springframework.stereotype.Service;
+
+import in.ashokit.dto.DashboardResponse;
+import in.ashokit.entities.Counsellor;
+
+@Service
+public class CounsellorServiceImpl  implements CounsellorService{}

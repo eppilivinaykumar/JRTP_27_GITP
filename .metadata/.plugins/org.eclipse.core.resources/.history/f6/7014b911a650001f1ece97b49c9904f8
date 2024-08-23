@@ -1,0 +1,15 @@
+package com.infy.infy.service;
+
+import java.util.List;
+
+import com.infy.infy.dto.CustomerDTO;
+import com.infy.infy.exception.InfyBankException;
+
+public interface CustomerService {
+	
+	public CustomerDTO getCustomer(Integer customerId) throws InfyBankException;
+	public List<CustomerDTO> getAllCustomers() throws InfyBankException;
+	public Integer addCustomer(CustomerDTO customer) throws InfyBankException;
+	
+
+}

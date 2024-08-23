@@ -1,0 +1,32 @@
+package com.employeeInfo.EmployeeDetails.Entity;
+import javax.validation.constraints.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
+public class Employee {
+    @NotBlank
+    private String employeeId;
+
+    @NotBlank
+    private String firstName;
+
+    @NotBlank
+    private String lastName;
+
+    @Email
+    @NotBlank
+    private String email;
+
+    @NotEmpty
+    private List<@Pattern(regexp = "\\d{10}") String> phoneNumbers;
+
+    @NotNull
+    private LocalDate doj;
+
+    @NotNull
+    @Positive
+    private BigDecimal salary;
+
+    // Getters and setters
+}

@@ -1,0 +1,43 @@
+package com.infy.infy.service;
+
+import java.util.*;
+
+import org.apache.el.stream.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.infy.infy.dao.CustomerRepository;
+import com.infy.infy.dto.CustomerDTO;
+import com.infy.infy.entity.Customer;
+import com.infy.infy.exception.InfyBankException;
+
+import jakarta.transaction.Transactional;
+
+@Service(value = "customerService")
+@Transactional
+public class CustomerServiceImpl implements CustomerService {
+	
+	@Autowired
+	private CustomerRepository customerRespository;
+
+	@Override
+	public CustomerDTO getCustomer(Integer customerId) throws InfyBankException {
+		Optional<Customer> optional = customerRespository.findById(customerId);
+		
+		
+		return null;
+	}
+
+	@Override
+	public List<CustomerDTO> getAllCustomers() throws InfyBankException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer addCustomer(CustomerDTO customer) throws InfyBankException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

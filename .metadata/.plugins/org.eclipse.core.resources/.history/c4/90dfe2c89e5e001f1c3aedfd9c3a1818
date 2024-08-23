@@ -1,0 +1,19 @@
+package in.ashokit.entities;
+
+@Entity
+public class Counsellor {
+	
+	
+//	1) counsellors_tbl
+//
+//counsellor_id (PK)
+//name
+//email (unique)
+//pwd
+//phno
+//created_date
+//updated_date
+
+
+
+}

@@ -1,0 +1,65 @@
+package in.ashokit.service;
+
+import java.util.List;
+
+import in.ashokit.dto.ViewEnqFilterRequest;
+import in.ashokit.entities.Counsellor;
+import in.ashokit.entities.Enquiry;
+import in.ashokit.repos.CounsellorRepo;
+import in.ashokit.repos.EnquiryRepo;
+
+public class EnquiryServiceImpl implements EnquiryService {
+	
+	private EnquiryRepo enqRepo;
+	
+	private CounsellorRepo counsellorRepo;
+	
+	public EnquiryServiceImpl(EnquiryRepo enqRepo,CounsellorRepo counsellorRepo) {
+		
+		this.enqRepo = enqRepo;
+		this.counsellorRepo = counsellorRepo;
+	}
+	
+
+	@Override
+	public boolean addEnqiry(Enquiry enq, Integer counsellorId) throws Exception {
+		
+		Counsellor counsellor = counsellorRepo.findById(counsellorId).orElse(null);
+		
+		if(counsellor == null) {
+			throw new Exception("No counsellor found");
+		}
+		
+		
+		// associating counsellor to enquiry 
+		enq.setCounsellor(counsellor);
+		Enquiry save = enqRepo.save(enq);
+		
+		if(save.getEnqId() != null) {
+			return true;
+		}
+		
+		return false;
+	}
+
+	@Override
+	public List<Enquiry> getAllEnquiries(Integer counsellorId) {
+		
+		return enqRepo.getEnquiresByCounsellorId(counsellorId);
+		
+	}
+	@Override
+	public Enquiry getEnquiryById(Integer enqId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Enquiry> getEnquiresWithFilter(ViewEnqFilterRequest filterReq, Integer counsellorId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}
